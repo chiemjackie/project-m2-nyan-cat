@@ -10,7 +10,7 @@ class Enemy {
 
     this.domElement = document.createElement('img');
 
-    this.domElement.src = './images/fire.png';
+    this.domElement.src = './assets/fire.png';
     this.domElement.style.position = 'absolute';
     this.domElement.style.left = `${this.x}px`;
     this.domElement.style.top = `${this.y}px`;
@@ -19,7 +19,7 @@ class Enemy {
     this.domElement.style.zIndex = 5;
 
     theRoot.appendChild(this.domElement);
-    this.speed = Math.random() / 2 + minSpeed;
+    this.speed = Math.random() / 5 + minSpeed;
   }
   update(timeDiff) {
     this.y = this.y + timeDiff * this.speed;

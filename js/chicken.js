@@ -1,21 +1,21 @@
 class Chicken {
-  constructor(theRoot, enemySpot) {
+  constructor(theRoot, chickenSpot) {
     this.root = theRoot;
-    this.spot = enemySpot;
+    this.spot = chickenSpot;
 
-    this.x = enemySpot * ENEMY_WIDTH;
+    this.x = chickenSpot * CHICKEN_WIDTH;
 
-    this.y = -ENEMY_HEIGHT;
+    this.y = -CHICKEN_HEIGHT;
     this.destroyed = false;
 
     this.domElement = document.createElement('img');
 
-    this.domElement.src = './images/chicken.png';
+    this.domElement.src = './assets/chicken.png';
     this.domElement.style.position = 'absolute';
     this.domElement.style.left = `${this.x}px`;
     this.domElement.style.top = `${this.y}px`;
-    this.domElement.style.height = ENEMY_HEIGHT;
-    this.domElement.style.width = ENEMY_WIDTH;
+    this.domElement.style.height = CHICKEN_HEIGHT;
+    this.domElement.style.width = CHICKEN_WIDTH;
     this.domElement.style.zIndex = 5;
 
     theRoot.appendChild(this.domElement);

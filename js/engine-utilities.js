@@ -1,7 +1,7 @@
 const nextEnemySpot = (enemies) => {
   const enemySpots = GAME_WIDTH / ENEMY_WIDTH;
 
-  const spotsTaken = [false, false, false, false, false];
+  const spotsTaken = [];
   enemies.forEach((enemy) => {
     spotsTaken[enemy.spot] = true;
   });
@@ -17,7 +17,7 @@ const nextEnemySpot = (enemies) => {
 const addBackground = (root) => {
   const bg = document.createElement('img');
 
-  bg.src = 'images/tavern.jpg';
+  bg.src = 'assets/tavern.jpg';
   bg.style.height = `${GAME_HEIGHT}px`;
   bg.style.width = `${GAME_WIDTH}px`;
 

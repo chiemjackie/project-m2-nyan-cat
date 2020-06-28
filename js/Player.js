@@ -5,7 +5,7 @@ class Player {
     this.y = GAME_HEIGHT - PLAYER_HEIGHT;
 
     this.domElement = document.createElement('img');
-    this.domElement.src = 'images/sandor.jpg';
+    this.domElement.src = 'images/doggo.png';
     this.domElement.style.position = 'absolute';
     this.domElement.style.left = `${this.x}px`;
     this.domElement.style.top = ` ${this.y}px`;

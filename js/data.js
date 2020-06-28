@@ -6,4 +6,10 @@ const ENEMY_HEIGHT = 100;
 const MAX_ENEMIES = 10;
 
 const PLAYER_WIDTH = 100;
-const PLAYER_HEIGHT = 150;
+const PLAYER_HEIGHT = 100;
+
+const lenience = 30;
+
+let minSpeed = 0.25;
+
+setInterval(function(){ minSpeed += 0.01; }, 1000);

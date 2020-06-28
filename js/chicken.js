@@ -1,4 +1,4 @@
-class Enemy {
+class Chicken {
   constructor(theRoot, enemySpot) {
     this.root = theRoot;
     this.spot = enemySpot;
@@ -10,7 +10,7 @@ class Enemy {
 
     this.domElement = document.createElement('img');
 
-    this.domElement.src = './images/fire.png';
+    this.domElement.src = './images/chicken.png';
     this.domElement.style.position = 'absolute';
     this.domElement.style.left = `${this.x}px`;
     this.domElement.style.top = `${this.y}px`;
@@ -19,13 +19,13 @@ class Enemy {
     this.domElement.style.zIndex = 5;
 
     theRoot.appendChild(this.domElement);
-    this.speed = Math.random() / 2 + minSpeed;
+    this.speed = Math.random() / 5 + minSpeed;
   }
   update(timeDiff) {
     this.y = this.y + timeDiff * this.speed;
     this.domElement.style.top = `${this.y}px`;
 
-    if (this.y > GAME_HEIGHT - 50) {
+    if (this.y > GAME_HEIGHT) {
       this.root.removeChild(this.domElement);
 
       this.destroyed = true;

@@ -37,7 +37,7 @@ class Engine {
 
   isPlayerDead = () => {
     return this.enemies.some((cat) => {
-      return cat.y + ENEMY_HEIGHT > gameEngine.player.y && cat.x === gameEngine.player.x;
+      return cat.y + ENEMY_HEIGHT - lenience > gameEngine.player.y && cat.x === gameEngine.player.x;
     });
   };
 }

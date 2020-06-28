@@ -1,14 +1,14 @@
-const nextEnemySpot = (enemies) => {
-  const enemySpots = GAME_WIDTH / ENEMY_WIDTH;
+const nextSpot = (droppers) => {
+  const spots = GAME_WIDTH / ENEMY_WIDTH;
 
   const spotsTaken = [];
-  enemies.forEach((enemy) => {
-    spotsTaken[enemy.spot] = true;
+  droppers.forEach((dropper) => {
+    spotsTaken[dropper.spot] = true;
   });
 
   let candidate = undefined;
   while (candidate === undefined || spotsTaken[candidate]) {
-    candidate = Math.floor(Math.random() * enemySpots);
+    candidate = Math.floor(Math.random() * spots);
   }
 
   return candidate;
@@ -33,3 +33,11 @@ const addBackground = (root) => {
   whiteBox.style.background = '#fff';
   root.append(whiteBox);
 };
+
+const startBGM = () => {
+  let sound = new Audio('/assets/gametheme.mp3');
+  sound.currentTime = 0;
+  sound.loop = true;
+  sound.volume = 0.05;
+  sound.play();
+}

@@ -1,8 +1,3 @@
-let sound = document.getElementById("audioId");
-sound.currentTime = 0;
-sound.loop = true;
-sound.play();
-
 const GAME_WIDTH = 1700;
 const GAME_HEIGHT = 850;
 
@@ -21,4 +16,17 @@ const lenience = 30;
 
 let minSpeed = 0.1;
 
-setInterval(function(){ minSpeed += 0.01; }, 2000);
+setInterval(function(){ minSpeed += 0.01; }, 1500);
+
+let score = 0;
+
+let scoreDisplay = document.getElementById('score');
+scoreDisplay.innerText = score;
+scoreDisplay.style.zIndex = 5000;
+scoreDisplay.style.position = 'absolute';
+scoreDisplay.style.left = 20;
+scoreDisplay.style.top = 20;
+scoreDisplay.style.color = 'white';
+scoreDisplay.style.font = 'bold 30px Impact';
+document.querySelector('#score').appendChild(scoreDisplay);
+

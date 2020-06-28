@@ -21,6 +21,12 @@ class Enemy {
     theRoot.appendChild(this.domElement);
     this.speed = Math.random() / 5 + minSpeed;
   }
+
+  destroy () {
+    this.root.removeChild(this.domElement);
+    this.destroyed = true;
+  }
+
   update(timeDiff) {
     this.y = this.y + timeDiff * this.speed;
     this.domElement.style.top = `${this.y}px`;
@@ -29,6 +35,6 @@ class Enemy {
       this.root.removeChild(this.domElement);
 
       this.destroyed = true;
-    }
+    } 
   }
 }

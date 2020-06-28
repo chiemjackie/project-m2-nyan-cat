@@ -16,11 +16,21 @@ class Chicken {
     this.domElement.style.top = `${this.y}px`;
     this.domElement.style.height = CHICKEN_HEIGHT;
     this.domElement.style.width = CHICKEN_WIDTH;
-    this.domElement.style.zIndex = 5;
+    this.domElement.style.zIndex = 4;
 
     theRoot.appendChild(this.domElement);
     this.speed = Math.random() / 5 + minSpeed;
   }
+
+  destroy () {
+    let sound = new Audio('/assets/cluck.mp3');
+    sound.currentTime = 0;
+    sound.volume = 0.05;
+    sound.play();
+    this.root.removeChild(this.domElement);
+    this.destroyed = true;
+  }
+
   update(timeDiff) {
     this.y = this.y + timeDiff * this.speed;
     this.domElement.style.top = `${this.y}px`;
